@@ -8,4 +8,5 @@ layouts, responsiveness, transitions, and UI components.
 
 ### Projects
 - Sidebar Menu (HTML & CSS)
+- SPOTIFY Clone (HTML & CSS)
 - More coming soon 
