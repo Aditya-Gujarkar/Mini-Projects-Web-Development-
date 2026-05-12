@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit the File</title>
+</head>
+<body>
+    <h2>Edit your Post</h2>
+    <h3>Post id : <%= post.id %></h3>
+    <h3>Post username : <%= post.username %></h3>
+    <form method="post" action="/posts/<%= post.id %>?_method=PATCH"> <!-- to use method override here-->
+        <textarea name="content" rows="10" cols="30"><%= post.content %></textarea>
+        <button>Submit</button>
+    </form>
+</body>
+</html>
