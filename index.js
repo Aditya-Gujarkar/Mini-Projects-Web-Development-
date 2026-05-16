@@ -1,7 +1,7 @@
 const express = require('express');   // to import express library
 const app = express();               // to create express app which will be main server 
 const path = require('path');        // to import path module for file handling
-const port = 8080;
+const port = 8000;
 const { v4: uuidv4 } = require('uuid');   // to import uuid library for generating unique ids for posts
 const methodOverride = require('method-override');   // to import method-override library to use HTTP verbs like PATCH and DELETE in HTML forms
 
@@ -53,7 +53,7 @@ app.post("/posts", (req, res) => {
 app.get("/posts/:id", (req, res) => {
     const { id } = req.params;
     let post = posts.find((p) => id === p.id);    // to find post using id
-    res.render("show.ejs");   // redirecting to home page after submitting the post
+    res.render("show.ejs", { post });   // redirecting to home page after submitting the post
 })
 // Api 4: to Update a post using PATCH 
 app.patch("/posts/:id", (req, res) => {
@@ -78,5 +78,5 @@ app.delete("/posts/:id", (req, res) => {
 })
 
 app.listen(port, () => {            // starts server and listens on specified port
-    console.log("listening to port : 8080");
+    console.log(`listening to port : ${port}`);
 });
